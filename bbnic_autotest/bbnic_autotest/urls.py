@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 #from django.contrib import admin
-from . import view,search2
+from . import view,search2,if_fb
 
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
-    url(r'^$', view.hello),
-    url(r'^hello$', view.hello),
-    url(r'^search-post$', search2.search_post),
+    #url(r'^$', view.hello),
+    #url(r'^hello$', view.hello),
+    #url(r'^search-post$', search2.search_post),
+    url(r'^autotest$', if_fb.if_top),
 ]
