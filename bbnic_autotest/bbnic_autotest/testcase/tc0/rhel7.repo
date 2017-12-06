@@ -1,0 +1,5 @@
+[rhel-yum]
+name=rhel7
+baseurl=file:///hans/os1
+enabled=1
+gpgcheck=0

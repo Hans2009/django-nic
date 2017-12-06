@@ -18,7 +18,8 @@ def ssh_cmd_send(ip,port,user,password,cmd):
     stdin, stdout, stderr = a
     print stdout.read()
     ssh.close()
-  
+    return 'ssh_cmd_send successfully'
+
 if __name__ == '__main__':
     length = len(sys.argv)
     if len(sys.argv) < 5:
