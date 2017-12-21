@@ -1,0 +1,21 @@
+<html>
+<title>Login page</title>
+<head>This is Login page from Django default login lib! '/account/templates/registration'</head>
+<body>
+<h1>login</h1>
+<p>Input your username and password</p>
+<form class="form-horizontal" action="{% url 'account:user_login'  %}" method="post"> {% csrf_token %}
+<!-- {% csrf_token %} -->
+ 
+    <p>
+        <label for="id_username">Username:</label>
+        <input id="id_username" name="username" required="" type="text">
+    </p>
+    <p>
+        <lable for="id_password">Password:</label>
+        <input id="id_password" name="password" required="" type="password">
+    </p>
+    <input value="Login" type="submit">
+</form>
+</body>
+</html>

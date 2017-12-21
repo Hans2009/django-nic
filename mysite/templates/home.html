@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+<title>Home</title>
+</head>
+<body>
+<h1>This is Home page</h1>
+<h3>Life is short, we use Python</h3>
+
+<!------------------------------------------------->
+<div>
+    <ul class="nav navbar-nav navbar-right" stytle="margin-right:10px">
+        {% if user.is_authenticated %}
+        <li><a href="#">{{ user.username }}</a></li>
+        <li><a href="{% url 'account:user_logout' %}">Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'account:user_login' %}">LOGIN</a></li>
+        {% endif %}
+    </ul>
+</div>
+
+<!------------------------------------------------->
+<form action="/autotest" method="post">
+    {% csrf_token %}
+
+    <fieldset>
+
+    <p>
+    <b>IP Address:</b>
+    <select name="ip">
+    <option value="10.245.36.66">Test server:10.245.36.66</option>
+    <option value="192.168.81.129">Test server:192.168.81.128</option>
+    </select>
+    </p>
+
+    <p>
+    <b>Vendor:</b>
+    <select name="Vender">
+    <option value="OmniPath">OmniPath</option>
+    <option value="Qlogic">Qlogic</option>
+    </select>
+    </p>
+
+    <p>
+    <b>Operate System:</b>
+    <select name="OS">
+    <option value="RHEL73">RHEL7.3</option>
+    <option value="RHEL74">RHEL7.4</option>
+    </select>
+    </p>
+
+
+    <p><b>OSS number:</b><input type="text" name="oss_number" required></p>
+
+    <p>
+    <b>Test case:</b>
+    <select name="testcase">
+    <option value="tc0">TC0:Install Driver</option>
+    <option value="tc1">TC1:Install Firmware</option>
+    </select>
+    </p>
+
+
+
+    <input type="submit" value="Submit">
+
+    </fieldset>
+</form>
+
+<p>Vender  :{{ rlt1 }}</p>
+<p>OS      :{{ rlt2 }}</p>
+<p>Testcase:{{ rlt3 }}</p>
+<p>OSS num :{{ rlt4 }}</p>
+<p><b>Test result: {{ rlt }}<b></p>
+
+
+
+
+
+</body>
+</html>

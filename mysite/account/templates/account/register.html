@@ -1,0 +1,35 @@
+<html>
+<title>Login page</title>
+<head>This is Register page! '/account/templates/account/login.html'</head>
+<body>
+<h1>login</h1>
+<p>Input your username and password</p>
+<form class="form-horizontal" action="." method="post"> 
+{% csrf_token %} 
+<!-- {% csrf_token %} -->
+    <p>
+        <label for="id_username">Username:</label>
+        <input id="id_username" name="username" required="" type="text">
+    </p>
+
+    <p>
+        <label for="id_email">Email:</label>
+        <input id="id_email" name="email" required="" type="text">
+    </p>
+
+    <p>
+        <label for="id_password">Password:</label>
+        <input id="id_password" name="password" required="" type="password">
+    </p>
+
+    <p>
+        <label for="id_password2">Confirm Password:</label>
+        <input id="id_password2" name="password2" required="" type="password">
+    </p>
+
+
+
+    <input value="REGISTER" type="submit">
+</form>
+</body>
+</html>

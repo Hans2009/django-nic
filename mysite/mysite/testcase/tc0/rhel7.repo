@@ -1,0 +1,6 @@
+[rhel74]
+name=rhel74
+baseurl=http://10.245.36.164/rhel74/
+enabled=1
+gpgcheck=1
+gpgkey=http://10.245.36.164/rhel74/RPM-GPG-KEY-redhat-release
