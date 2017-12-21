@@ -4,10 +4,10 @@ from django.views.decorators import csrf
 
 import sys,os
 #sys.path.insert(0,'./tool/')
-sys.path.append('/home/ubuntu17/Documents/shared/github/dj/mysite/mysite/tool/')
+sys.path.append('/home/ubuntu17/Documents/shared/github/dj/django-nic/mysite/mysite/tool/')
 import ssh_cmd
 import scp_sendrecv
-sys.path.append('/home/ubuntu17/Documents/shared/github/dj/mysite/mysite/vendor/opa/')
+sys.path.append('/home/ubuntu17/Documents/shared/github/dj/django-nic/mysite/mysite/vendor/opa/')
 import opa_testcase
 
 
