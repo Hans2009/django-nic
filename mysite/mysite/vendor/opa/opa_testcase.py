@@ -20,7 +20,7 @@ def opa_tc0(ip,port,usr,passwd,oss_number):
         file_path_remote = os.path.join(testcase_path_remote,file_name)
         print(file_path_local)
         print(file_path_remote)
-        #scp_sendrecv.ssh_scp_put(ip,port,usr,passwd,file_path_local,file_path_remote)
+        scp_sendrecv.ssh_scp_put(ip,port,usr,passwd,file_path_local,file_path_remote)
 
     cmd = 'mkdir -p /opa/oss/' + oss_number
     ssh_cmd.ssh_cmd_send(ip,port,usr,passwd,'mkdir -p /opa/oss/88905')
