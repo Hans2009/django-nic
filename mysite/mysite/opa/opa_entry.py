@@ -28,14 +28,19 @@ def opa_entry_cli(ip,port,usr,passwd,oss_number,tc_number):
 ###########################################################################
 if __name__ == '__main__':
 #    length = len(sys.argv)
-#    if len(sys.argv) < 5:
+    if len(sys.argv) > 6:
         print "Error: wrong parameters"
-        print("Notes:%s,host_ip root password command" %sys.argv[0])
-#    else:
-#	print "this is test entry"
-#        ip = sys.argv[1]
-#        account = sys.argv[2]
-#        password = sys.argv[3]
-#        cmd = sys.argv[4]
-#        port = 22
-#        ssh_cmd_send(ip, port, account, password, cmd)
+        print("Notes:%s,ip,usr,passwd,oss_number,tc_number" %sys.argv[0])
+    else:
+        print "this is opa test entry"
+        #ip         = sys.argv[1]
+        ip         = '10.245.36.98'
+        #port       = sys.argv[2]
+        usr        = 'root'
+        passwd     = '111111'
+        oss_number = '88905'
+        tc_number  = 'tc0'
+
+        port = 22
+        #ssh_cmd_send(ip, port, account, password, cmd)
+        opa_entry_cli(ip,port,usr,passwd,oss_number,tc_number)
