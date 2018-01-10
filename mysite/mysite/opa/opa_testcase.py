@@ -70,11 +70,9 @@ def opa_tc0(ip,port,usr,passwd,oss_number):
             print("ssh_cmd.ssh_cmd_send(%s,%s,%s,%s,%s):"%(ip,port,usr,passwd,cmd))
     print("======================================================================")
 
-    cmd = 'source ' + file_shotname + '/install.sh'
-    ssh_cmd.ssh_cmd_send(ip,port,usr,passwd,cmd)
-    print("ssh_cmd.ssh_cmd_send(%s,%s,%s,%s,%s):"%(ip,port,usr,passwd,cmd))
-
-    cmd = 'source ' + file_shotname + '/driver.sh'
+    #cmd = 'source ' + file_shotname + '/install.sh'
+    cmd = 'cd ' + file_shotname + ' && source driver.sh'
+    #cmd = 'cd /opa/pkgs/88905/IntelOPA-IFS.RHEL74-x86_64.10.6.0.0.134 && source driver.sh'
     ssh_cmd.ssh_cmd_send(ip,port,usr,passwd, cmd)
     print("ssh_cmd.ssh_cmd_send(%s,%s,%s,%s,%s):"%(ip,port,usr,passwd,cmd))
 
