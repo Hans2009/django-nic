@@ -11,6 +11,7 @@ import ping_timeout
 #sys.path.insert(0,'./opa/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/opa')
 import opa_testcase
+import opa_entry
 
 #globle variables
 #ip = '192.168.81.129'
@@ -41,25 +42,15 @@ def main_my(request):
         ctx['rlt3'] = oss_number
         ctx['rlt4'] = tc_number
 
-        #ssh_cmd.ssh_cmd_send(ip,port,usr,passwd,'ip a s')
         print "Start : %s" % time.ctime()
 
         if vendor == 'OmniPath':
-            if tc_number == 'tc0':
-                print("opa_testcase.opa_tc0")
-                ctx['rlt5']  = opa_testcase.opa_tc0(ip,port,usr,passwd,oss_number)
-            elif tc_number == 'tc1':
-                print("opa_testcase.opa_tc1")
-                ctx['rlt5']  = opa_testcase.opa_tc1(ip,port,usr,passwd)
-            elif tc_number == 'tc2':
-                print("opa_testcase.opa_tc2")
-                ctx['rlt5']  = opa_testcase.opa_tc2(ip,port,usr,passwd,oss_number)
-            else:
-                print("Please choose valid testcase!")
+            ctx['rlt5'] = opa_entry.opa_entry_cli(ip,port,usr,passwd,oss_number,tc_number)
         elif vendor == 'Qlogic':
             print("Qlogic not supported now!")
         else:
             print("Please choose your own vendor")
+
 
     return render(request, "home.html", ctx)
 
