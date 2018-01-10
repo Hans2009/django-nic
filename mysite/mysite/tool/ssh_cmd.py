@@ -33,7 +33,3 @@ if __name__ == '__main__':
         cmd = sys.argv[4]
         port = 22
         ssh_cmd_send(ip, port, account, password, cmd)
-
-
-
-

@@ -24,7 +24,7 @@ yum install -y --nogpgcheck libstdc++-devel
 yum install -y --nogpgcheck papi
 yum install -y --nogpgcheck elfutils-libelf-devel
 yum install -y --nogpgcheck sysfsutils
-#yum install -y --nogpgcheck kernel-devel
+yum install -y --nogpgcheck kernel-devel
 yum install -y --nogpgcheck rpm-build
 yum install -y --nogpgcheck redhat-rpm-config
 yum install -y --nogpgcheck readline-devel
